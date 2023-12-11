@@ -85,7 +85,7 @@ public class StrategyA {
                 df.format(up5), df.format(up4), df.format(up3), df.format(up2), df.format(up1),
                 baseLine,
                 df.format(down1), df.format(down2), df.format(down3), df.format(down4), df.format(down5));
-        //TODO 写入CSV日志文件以供分析
+        //写入CSV日志文件以供分析
 //++++++++++++++++++++++++++Buy Start++++++++++++++++++++++++++++++++
         //本次进场买单总量合计
         BigDecimal thisOrderQty = BigDecimal.ZERO;
@@ -120,7 +120,7 @@ public class StrategyA {
             String orderResultJson = orderTool.placeBuyOrder(Constant.TRADE_SYMBOL, thisOrderQty);
             //在全局静态变量里记录仓位
             positionA = positionA.add(thisOrderQty);
-            //TODO 写入CSV日志文件以供分析
+            //写入CSV日志文件以供分析
             logger.info("下买单，买单数量:{}, 现在{}仓位: {}", thisOrderQty, Constant.TRADE_COIN, positionA);
 
             thisOrderQty = BigDecimal.ZERO;
@@ -181,7 +181,7 @@ public class StrategyA {
             String orderResultJson = orderTool.placeSellOrder(Constant.TRADE_SYMBOL, thisSellQty);
             //校准仓位
             positionA = positionA.subtract(thisSellQty);
-            //TODO 写入CSV日志文件以供分析
+            //写入CSV日志文件以供分析
             logger.info("下卖单，卖出数量:{}, 现在{}仓位: {}", thisSellQty, Constant.TRADE_COIN, positionA);
 
             thisSellQty = BigDecimal.ZERO;
